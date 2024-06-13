@@ -5,24 +5,11 @@ def open_chrome_driver(url_part,i):
     launch_year = ['2010','1977','1977']
     urls = ['https://www.satflare.com/track.asp?q=36288#TOP','https://www.satflare.com/track.asp?q=%201000#TOP','https://www.satflare.com/track.asp?q=10221#TOP']
 
-    # urls = ['https://www.satflare.com/track.asp?q=10002#TOP','https://www.satflare.com/track.asp?q=10096#TOP','https://www.satflare.com/track.asp?q=00100#TOP']
-    #Hammad
-    # r = redis.Redis(
-    # host='redis-11216.c57.us-east-1-4.ec2.redns.redis-cloud.com',
-    # port=11216,
-    # password='wYxWadiBK06HjAMcEKGxG34Euz1sROia')
-
-
     r = redis.Redis(
     host='redis-18031.c10.us-east-1-4.ec2.redns.redis-cloud.com',
     port=18031,
     password='ULpXSi6mbA8NKVzH2PLARURIeE7ts1tL')
-
-    # Nehal Bhai
-    # r = redis.Redis(
-    # host='redis-14507.c293.eu-central-1-1.ec2.redns.redis-cloud.com',
-    # port=14507,
-    # password='JZzTXUToEs92B8wBHzTAFI0ZRPp24Mg0')
+   
     myclient = pymongo.MongoClient("mongodb+srv://admin:admin@mernapp.50ko6vi.mongodb.net/?retryWrites=true&w=majority",tlsCAFile=certifi.where())
     mydb = myclient["mydatabase"]
     current_date = datetime.now().date()
@@ -88,27 +75,9 @@ def open_chrome_driver(url_part,i):
         data_dict = json.loads(data_json)  # Convert back to dictionary (if needed)
         # Insert the data
         result = mycol.insert_one(data_dict)
-        # print(result)
-        # try:
-
-        #     data_json = json.dumps(satellite_data)
-        # except Exception as e:
-        #     print(e)
-        # time.sleep(1)
-        # # Save the data in Redis
-        # r.rpush('settlelite', data_json)
-        # result = mycol.insert_one(satellite_data)
-        # print(result)
-        # # print(satellite_data,urls[i])
-        # # Convert dictionary to JSON string
-        # data_json = json.dumps(satellite_data)
-        # time.sleep(1)
-        # # Save the data in Redis
-        # r.rpush('settlelite', data_json)
+       
 def main():
-    # urls = ['https://www.satflare.com/track.asp?q=00000#TOP','https://www.satflare.com/track.asp?q=00001#TOP','https://www.satflare.com/track.asp?q=00100#TOP']
-    # urls = ['https://www.satflare.com/track.asp?q=10000#TOP','https://www.satflare.com/track.asp?q=10002#TOP','https://www.satflare.com/track.asp?q=00001#TOP']
-    # urls = ['https://www.satflare.com/track.asp?q=00000#TOP','https://www.satflare.com/track.asp?q=00001#TOP']
+   
     urls = ['https://www.satflare.com/track.asp?q=36288#TOP','https://www.satflare.com/track.asp?q=%201000#TOP','https://www.satflare.com/track.asp?q=10221#TOP']
     # Convert the result back to a list
     different_urls_list = list(urls)
