@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Environment varibales
+.env*
+!.env*.example
+
+# Code coverage
+coverage
+
+# OS
+.DS_Store
+
+# CODE
+database
+scripts
+web/materialdesignicons-webfont.eot
+web/materialdesignicons-webfont.ttf
